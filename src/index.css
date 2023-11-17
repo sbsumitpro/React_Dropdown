@@ -1,13 +1,67 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html{
+  box-sizing:border-box;
+  font-family: 'roboto', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+  --primary:#7bd7e2;
+  --secondary:#ffffff;
+}
+
+body{
+  width:100%;
+  height: 100vh;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem;
+}
+
+.dropdown{
+  width: 25rem;
+  transform: translateX(-15%);
+  position: relative;
+}
+
+.heading{
+  transform: translateX(-15%);
+}
+
+.dropdown:hover .dropdown-list{
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-select{
+  width: 94%;
+  padding: 0.8rem;
+  border-radius: 4px;
+  background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.dropdown-list{
+  background-color: var(--secondary);
+  border-radius: 4px;
+  position: absolute;
+  top:110%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s linear, visibility 0.2s linear;
+}
+
+.dropdown-list-item{
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.dropdown-list-item:hover{
+  background-color: rgb(236, 230, 230);
 }
